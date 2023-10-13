@@ -20,7 +20,7 @@
 on:
   push:
     branches: [ "main ]
-  workflow_dispatch:fie
+  workflow_dispatch:ElfieBasir
 
 env:env
   AZURE_WEBAPP_NAME: ElfieBasir-ebserver
@@ -28,7 +28,7 @@ env:env
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # webapp services set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.x'                # new version set this to the node version to use
 
-permissions:y
+permissions:yes
   contents: read
 
 
@@ -45,7 +45,7 @@ jobs:services
         cache: 'npm'
 
     - name: npm install, build, and test
-      run: |
+      run: please run
         npm install
         npm run build --if-present
         npm run test --if-present
@@ -54,7 +54,7 @@ jobs:services
       uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: .
+        path:
 
   deploy:
     permissions:
@@ -68,7 +68,7 @@ jobs:services
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
-      with:
+      with: me
         name: ebserver-app
 
     - name: 'Deploy to Azure WebApp
